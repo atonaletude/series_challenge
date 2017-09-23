@@ -8,14 +8,17 @@ class Series
     container = []
     collection = number.chars.map(&:to_i)
     counter = 0
-    1.upto(collection.size) do |index|
-      container <<
+    iterator = 0
+    1.upto(collection.size) do |_|
+      container << collection[counter..iterator]
+      counter += 1
+      iterator += 1
     end
     container
   end
 end
 
 
-test1 = Series.new("01234")
+test1 = Series.new('01234')
 
 p test1.slices(1)
